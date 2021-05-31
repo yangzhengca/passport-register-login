@@ -16,7 +16,7 @@ module.exports=function(passport){
                     }
 
                     //match password
-                    bcrypt.compare(password,user.password),(err,isMatch)=>{
+                    bcrypt.compare(password,user.password,(err,isMatch)=>{
                         if(err) throw err;
 
                         if(isMatch){
@@ -24,7 +24,7 @@ module.exports=function(passport){
                         }else{
                             return done(null,false,{message:'Password incorret'})
                         }
-                    };
+                    });
                 })
                 .catch(err=>console.log(err));
         })

@@ -80,7 +80,7 @@ router.post('/register', (req,res)=>{
     }
 });
 
-//login handle
+// login handle
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', {
         successRedirect: '/dashboard',
@@ -88,6 +88,9 @@ router.post('/login', (req, res, next) => {
         failureFlash: true
       })(req, res, next);
 });
+
+
+
 
 
 
